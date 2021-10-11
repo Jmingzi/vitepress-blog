@@ -47,7 +47,7 @@ module.exports = {
           text: '基础建设',
           children: [
             { text: '总览', link: '/foundation/' },
-            { text: '组件库', link: '/foundation/components' },
+            { text: '工具和组件库', link: '/foundation/components' },
             { text: '微前端', link: '/foundation/singleapp' },
             { text: '流水线', link: '/foundation/xmflow' },
             { text: '讯盟文档', link: '/foundation/xmdoc' }
