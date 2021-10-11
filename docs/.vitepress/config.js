@@ -12,8 +12,8 @@ module.exports = {
     lastUpdated: 'Last Updated',
 
     nav: [
-      { text: '新人入职', link: '/' },
-      { text: '基础建设', link: '/' },
+      { text: '新人入职', link: '/guide/recruits' },
+      { text: '基础建设', link: '/foundation/', activeMatch: '^/foundation' },
     ],
 
     sidebar: {
@@ -31,7 +31,7 @@ module.exports = {
             },
             {
               text: '新人入职',
-              link: '/guide/culture'
+              link: '/guide/recruits'
             },
             { text: '代码规范', link: '/' },
             { text: '开发流程', link: '/' }
@@ -40,10 +40,11 @@ module.exports = {
         {
           text: '基础建设',
           children: [
-            { text: '组件库', link: '/' },
-            { text: '微前端', link: '/' },
-            { text: '流水线', link: '/' },
-            { text: '讯盟文档', link: '/' }
+            { text: '总览', link: '/foundation/' },
+            { text: '组件库', link: '/foundation/components' },
+            { text: '微前端', link: '/foundation/singleapp' },
+            { text: '流水线', link: '/foundation/xmflow' },
+            { text: '讯盟文档', link: '/foundation/xmdoc' }
           ]
         },
         {
