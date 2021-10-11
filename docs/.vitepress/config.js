@@ -4,10 +4,16 @@ module.exports = {
   base: '/',
 
   themeConfig: {
-    repo: 'https://git.shinemo.com/projects/FEGJ',
+    repo: 'https://git.shinemo.com/projects/FEGJ/repos/shinemofe/browse',
     repoLabel: 'Git',
     docsDir: 'docs',
     editLinks: true,
+    /**
+     * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/composables/editLink.ts
+     * 编辑的链接生成有问题
+     * 直接修改 node_modules 源码 vitepress/dist/client/theme-default/composables/editLink.js#L41
+     * 将 createBitbucketUrl 返回 /docs/foundation/index.md?useDefaultHandler=true 类似链接
+     */
     editLinkText: 'Edit this page on Git',
     lastUpdated: 'Last Updated',
 
