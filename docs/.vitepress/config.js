@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: '讯盟前端团队',
   description: '讯盟前端团队文档中心',
   base: '/',
@@ -37,10 +37,20 @@ module.exports = {
             },
             {
               text: '新人入职',
-              link: '/guide/recruits'
+              link: '/guide/recruits',
+              id: 'ad3332efbc2c9cead31e8023924c8422',
+              url: 'https://docs.uban360.com/project-detail/article/40/52/524'
             },
-            { text: '代码规范', link: '/' },
-            { text: '开发流程', link: '/' }
+            {
+              text: '代码规范',
+              link: '/'
+            },
+            {
+              text: '开发流程',
+              link: '/guide/dev-process',
+              id: 'b62f59be971fbef243b2b6e3bf29c729',
+              url: 'https://docs.uban360.com/project-detail/article/40/52/1072'
+            }
           ]
         },
         {
@@ -59,7 +69,10 @@ module.exports = {
             { text: '技术方向', link: '/' }
           ]
         },
-        { text: '文档贡献', link: '/' }
+        {
+          text: '文档贡献',
+          link: '/contribute'
+        }
       ]
     }
   }

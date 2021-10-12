@@ -10,5 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^0.20.0"
+  },
+  "dependencies": {
+    "markdown-it": "^12.2.0"
   }
 }
