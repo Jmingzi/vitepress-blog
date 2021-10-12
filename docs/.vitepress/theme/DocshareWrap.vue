@@ -62,9 +62,9 @@ function findByPath (array) {
   return find(array, path)
 }
 
-// console.log('匹配到路径', item)
 onMounted(() => {
   item = findByPath(themeConfig.sidebar['/'])
+  console.log('匹配到路径', item)
   if (item && item.id) {
     get(item.id).then(res => {
       const { modifier, content, gmtModified } = res.data.detail
