@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import MarkdownIt from 'markdown-it'
 import config from '../config'
 
@@ -21,7 +21,7 @@ const md = new MarkdownIt({
   linkify: true
 })
 const detail = ref(null)
-const item = findByPath(themeConfig.sidebar['/'])
+let item = null
 const exist = ref(!!item)
 
 function get (id) {
@@ -63,15 +63,18 @@ function findByPath (array) {
 }
 
 // console.log('匹配到路径', item)
-if (item && item.id) {
-  get(item.id).then(res => {
-    const { modifier, content, gmtModified } = res.data.detail
-    detail.value = {
-      content: md.render(content.replace('[TOC]', '')),
-      modifier,
-      gmtModified
-    }
-  })
-}
+onMounted(() => {
+  item = findByPath(themeConfig.sidebar['/'])
+  if (item && item.id) {
+    get(item.id).then(res => {
+      const { modifier, content, gmtModified } = res.data.detail
+      detail.value = {
+        content: md.render(content.replace('[TOC]', '')),
+        modifier,
+        gmtModified
+      }
+    })
+  }
+})
 
 </script>
