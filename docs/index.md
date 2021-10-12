@@ -6,6 +6,10 @@ heroText: 讯盟前端团队
 tagline: 正直、积极、创新
 actionText: 开始了解
 actionLink: /guide/
+
+altActionText: 文档贡献
+altActionLink: /contribute
+
 features:
 - title: Baas 运营商团队
   details: 待补充。
