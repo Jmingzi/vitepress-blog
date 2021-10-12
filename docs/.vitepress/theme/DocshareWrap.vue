@@ -67,8 +67,8 @@ onMounted(() => {
   // console.log('匹配到路径', item)
   if (item && item.id) {
     get(item.id).then(res => {
-      console.log(res.data.detail)
       const { modifier, content, gmtModified } = res.data.detail
+      exist.value = true
       detail.value = {
         content: md.render(content.replace('[TOC]', '')),
         modifier,
