@@ -43,7 +43,7 @@ export default {
               url: 'https://docs.uban360.com/project-detail/article/40/52/524'
             },
             {
-              text: '代码规范',
+              text: '团队规范',
               children: [
                 {
                   text: 'vue 相关规范',
@@ -68,14 +68,14 @@ export default {
                   link: '/guide/standard-code-submit',
                   id: '6c23fcf258d86372ffe39752cb92797f',
                   url: 'https://docs.uban360.com/project-detail/article/40/52/529'
+                },
+                {
+                  text: '开发流程规范',
+                  link: '/guide/dev-process',
+                  id: 'b62f59be971fbef243b2b6e3bf29c729',
+                  url: 'https://docs.uban360.com/project-detail/article/40/52/1072'
                 }
               ]
-            },
-            {
-              text: '开发流程',
-              link: '/guide/dev-process',
-              id: 'b62f59be971fbef243b2b6e3bf29c729',
-              url: 'https://docs.uban360.com/project-detail/article/40/52/1072'
             }
           ]
         },
