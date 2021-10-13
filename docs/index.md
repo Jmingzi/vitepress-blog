@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png
+heroImage: /logo.png
 heroAlt: Logo image
 heroText: 讯盟前端团队
 tagline: 正直、积极、创新

@@ -8,7 +8,7 @@ export default {
     repoLabel: 'Git',
     docsDir: 'docs',
     editLinks: true,
-    logo: 'https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png',
+    logo: '/logo.png',
     /**
      * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/composables/editLink.ts
      * 编辑的链接生成有问题
