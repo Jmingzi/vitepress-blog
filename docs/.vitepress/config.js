@@ -44,7 +44,32 @@ export default {
             },
             {
               text: '代码规范',
-              link: '/'
+              children: [
+                {
+                  text: 'vue 相关规范',
+                  link: '/guide/standard-vue',
+                  id: '59ea6b5d07da1fcb6cc88b4d593d84aa',
+                  url: 'https://docs.uban360.com/project-detail/article/40/52/527'
+                },
+                {
+                  text: 'react 相关规范',
+                  link: '/guide/standard-react',
+                  id: 'f37aa43cccfc7fc928d0af9d5e691828',
+                  url: 'https://docs.uban360.com/project-detail/article/40/52/873'
+                },
+                {
+                  text: '项目分支创建规范',
+                  link: '/guide/standard-branch',
+                  id: 'd43dd0cfb331dab2f94a0943cc796e72',
+                  url: 'https://docs.uban360.com/project-detail/article/40/52/528'
+                },
+                {
+                  text: '代码提交规范',
+                  link: '/guide/standard-code-submit',
+                  id: '6c23fcf258d86372ffe39752cb92797f',
+                  url: 'https://docs.uban360.com/project-detail/article/40/52/529'
+                }
+              ]
             },
             {
               text: '开发流程',

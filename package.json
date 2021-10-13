@@ -12,6 +12,8 @@
     "vitepress": "^0.20.0"
   },
   "dependencies": {
-    "markdown-it": "^12.2.0"
+    "escape-html": "^1.0.3",
+    "markdown-it": "^12.2.0",
+    "prismjs": "^1.25.0"
   }
 }
