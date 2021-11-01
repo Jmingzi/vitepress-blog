@@ -26,21 +26,23 @@ export default {
     sidebar: {
       '/': [
         {
-          text: '团队介绍',
+          text: '新人入职',
           children: [
             {
-              text: '人员结构',
+              text: '团队介绍',
               link: '/guide/'
             },
             {
-              text: '团队文化',
-              link: '/guide/culture'
+              text: '开发环境及账号',
+              link: '/guide/env-account',
+              id: '56df0f4458e9a3269a287946f59c28ed',
+              url: 'https://docs.uban360.com/project-detail/article/101/52/1727'
             },
             {
-              text: '新人入职',
-              link: '/guide/recruits',
-              id: 'ad3332efbc2c9cead31e8023924c8422',
-              url: 'https://docs.uban360.com/project-detail/article/40/52/524'
+              text: '工作平台及方式',
+              link: '/guide/platform',
+              id: '8065cfeb88d7d204835cd0a13b0f6fd0',
+              url: 'https://docs.uban360.com/project-detail/article/101/52/1729'
             },
             {
               text: '团队规范',
@@ -77,22 +79,38 @@ export default {
                 }
               ]
             }
+            // {
+            //   text: '新人入职',
+            //   link: '/guide/recruits',
+            //   id: 'ad3332efbc2c9cead31e8023924c8422',
+            //   url: 'https://docs.uban360.com/project-detail/article/40/52/524'
+            // }
           ]
         },
         {
-          text: '基础建设',
+          text: '开发与发布流程',
           children: [
-            { text: '总览', link: '/foundation/' },
-            { text: '工具和组件库', link: '/foundation/components' },
-            { text: '微前端', link: '/foundation/singleapp' },
-            { text: '流水线', link: '/foundation/xmflow' },
-            { text: '讯盟文档', link: '/foundation/xmdoc' }
+            { text: '创建项目', link: '/guide/dev-create-project', id: 'f79f843924cc8e7557e4ac0cfbf438fd', url: 'https://docs.uban360.com/project-detail/article/101/52/1737' },
+            { text: '发布流程', link: '/guide/publish', id: 'a17bae25d3d91f0120108518cb54f41d', url: 'https://docs.uban360.com/project-detail/article/101/52/1738' }
           ]
         },
         {
-          text: '未来规划',
+          text: '业务环境介绍',
           children: [
-            { text: '技术方向', link: '/' }
+            { text: 'Baas 环境', link: '/business/baas', id: 'ae9540ab84d62c9e7b43a3779f147802', url: 'https://docs.uban360.com/project-detail/article/101/52/1730' },
+            { text: 'Saas 环境', link: '/business/saas', id: '0a5e446264043213a2f4bb67a618e80c', url: 'https://docs.uban360.com/project-detail/article/101/52/1731' },
+            { text: '智慧城市', link: '/business/smart-city', id: 'a76754f04092655b2030e583b403ecad', url: 'https://docs.uban360.com/project-detail/article/101/52/1732' }
+          ]
+        },
+        {
+          text: '技术方案',
+          children: [
+            { text: '微前端', link: '/tech-solutions/micro', id: '9e7fb17be090dfe4d29a148431b910cf', url: 'https://docs.uban360.com/project-detail/article/101/52/1733' },
+            { text: '数据可视化', link: '/tech-solutions/visual', id: '05838b1d4aca81df040947cddc00ce79', url: 'https://docs.uban360.com/project-detail/article/101/52/1734' },
+            { text: '小程序', link: '/tech-solutions/mp', id: 'fd9d5e608e16f979a9f2d57bd25ccdba', url: 'https://docs.uban360.com/project-detail/article/101/52/1735' },
+            { text: 'H5 Hybrid', link: '/tech-solutions/h5-hybrid', id: 'a529409623bffedea0efa96ba504ecb0', url: 'https://docs.uban360.com/project-detail/article/101/52/1736' },
+            { text: '流水线', link: '/tech-solutions/flow', id: '6ee965422068b7748f8d613b263d76f8', url: 'https://docs.uban360.com/project-detail/article/101/52/2056' },
+            { text: '组件库和工具', link: '/tech-solutions/components', id: 'd842de5c2f71bd4befdfc31526b7ee1a', url: 'https://docs.uban360.com/project-detail/article/101/52/2057' }
           ]
         },
         {
