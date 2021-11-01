@@ -19,8 +19,8 @@ export default {
     lastUpdated: 'Last Updated',
 
     nav: [
-      { text: '新人入职', link: '/guide/recruits' },
-      { text: '基础建设', link: '/foundation/', activeMatch: '^/foundation' },
+      { text: '新人入职', link: '/guide/' },
+      { text: '技术体系', link: '/tech-solutions/', activeMatch: '^/tech-solutions' },
     ],
 
     sidebar: {
@@ -105,7 +105,7 @@ export default {
           ]
         },
         {
-          text: '技术方案',
+          text: '技术体系',
           children: [
             { text: '微前端', link: '/tech-solutions/micro', id: '9e7fb17be090dfe4d29a148431b910cf', url: 'https://docs.uban360.com/project-detail/article/101/52/1733' },
             { text: '数据可视化', link: '/tech-solutions/visual', id: '05838b1d4aca81df040947cddc00ce79', url: 'https://docs.uban360.com/project-detail/article/101/52/1734' },
