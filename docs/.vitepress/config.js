@@ -30,7 +30,9 @@ export default {
           children: [
             {
               text: '团队介绍',
-              link: '/guide/'
+              link: '/guide/',
+              id: 'bde1ba1d5f9e29861e7b6f46b93e6b74',
+              url: 'https://docs.uban360.com/project-detail/article/101/52/1726'
             },
             {
               text: '开发环境及账号',
