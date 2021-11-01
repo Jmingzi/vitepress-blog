@@ -20,7 +20,7 @@ export default {
 
     nav: [
       { text: '新人入职', link: '/guide/' },
-      { text: '技术体系', link: '/tech-solutions/', activeMatch: '^/tech-solutions' },
+      { text: '技术体系', link: '/tech-solutions/micro', activeMatch: '^/tech-solutions' },
     ],
 
     sidebar: {
