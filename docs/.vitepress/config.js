@@ -16,7 +16,8 @@ export default {
      */
     editLinkText: 'Edit this page on Git',
     editLinks: false,
-    lastUpdated: 'Last Updated',
+    // lastUpdated: 'Last Updated',
+    lastUpdated: '',
 
     nav: [
       { text: '新人入职', link: '/guide/' },
