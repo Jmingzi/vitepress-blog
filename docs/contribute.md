@@ -10,7 +10,7 @@
 
 新增讯盟文档上存在的文章：小程序原理，属于【技术体系】目录
 
-1. 新建空的 md 文件 `mp-theory.md` 到 `tech-solutions` 目录下
+1. 新建空的 md 文件 `mp-theory.md` 到 `tech-solutions` 目录下，内容为
   ```
   # 小程序原理
 
