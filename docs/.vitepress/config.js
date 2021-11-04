@@ -93,7 +93,8 @@ export default {
           text: '开发与发布流程',
           children: [
             { text: '创建项目', link: '/guide/dev-create-project', id: 'f79f843924cc8e7557e4ac0cfbf438fd', url: 'https://docs.uban360.com/project-detail/article/101/52/1737' },
-            { text: '发布流程', link: '/guide/publish', id: 'a17bae25d3d91f0120108518cb54f41d', url: 'https://docs.uban360.com/project-detail/article/101/52/1738' }
+            { text: '发布流程', link: '/guide/publish', id: 'a17bae25d3d91f0120108518cb54f41d', url: 'https://docs.uban360.com/project-detail/article/101/52/1738' },
+            { text: '子应用配置发布', link: '/guide/publish-micro-child', id: '9ea2d7947ac9e2cc6f2db412c65084ef', url: '' }
           ]
         },
         {
