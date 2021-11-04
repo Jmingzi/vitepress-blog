@@ -6,6 +6,31 @@
 
 本文档项目 `master` 禁止直接推送修改(TL 除外)，可以通过 pr 方式提出改进。
 
+### 示例
+
+新增讯盟文档上存在的文章：小程序原理，属于【技术体系】目录
+
+1. 新建空的 md 文件 `mp-theory.md` 到 `tech-solutions` 目录下
+  ```
+  # 小程序原理
+
+  <docshare-wrap />
+  ```
+2. 新增 sidebar 目录指向该文件
+  ```js
+  {
+    text: '技术体系',
+      children: [
+        { 
+          text: '小程序原理', 
+          link: '/tech-solutions/mp-theory', 
+          id: '分享ID',
+          // 源文章链接，便于直接编辑
+          url: 'https://docs.uban360.com/project-detail/article/101/52/1733' 
+        }  
+  ```
+3. 分享ID为文章右上角点击分享后弹窗内的 hash
+
 ### 文档部署
 
 本文档系统部署在 10.0.10.207 机器，通过 master 分支推送自动打包构建更新。
