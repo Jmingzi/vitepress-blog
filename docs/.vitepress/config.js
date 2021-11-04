@@ -15,7 +15,8 @@ export default {
      * 直接修改 node_modules 源码 vitepress/dist/client/theme-default/composables/editLink.js#L41
      * 将 createBitbucketUrl 返回 /docs/foundation/index.md?useDefaultHandler=true 类似链接
      */
-    editLinkText: 'Edit this page on Git',
+    // editLinkText: 'Edit this page on Git',
+    editLinkText: '',
     lastUpdated: 'Last Updated',
 
     nav: [
