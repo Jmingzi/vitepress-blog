@@ -21,7 +21,7 @@ export default {
     // lastUpdated: 'Last Updated',
 
     nav: [
-      { text: '新人入职', link: '/guide/' },
+      { text: '新人入职', link: '/sync-doc/xin_ren_ru_zhi/tuan_dui_jie_shao' },
       { text: '文档贡献', link: '/contribute', activeMatch: '^/contribute' },
     ],
 
