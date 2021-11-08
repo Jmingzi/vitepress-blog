@@ -22,15 +22,27 @@ import config from '../config'
 import { findByPath } from './utils'
 import { highlight } from './highlight'
 import { preWrapperPlugin } from './preWrapper'
+import mdAnchor from 'markdown-it-anchor'
+import mdToc from 'markdown-it-toc-done-right'
 
 const { themeConfig } = config
 const md = new MarkdownIt({
   html: true,
   breaks: true,
   linkify: true,
+  typographer: true,
   highlight
 })
 md.use(preWrapperPlugin)
+  .use(mdAnchor, {
+    permalink: true,
+    permalinkBefore: true,
+    permalinkSymbol: '§'
+    // slugify: legacySlugify
+  })
+  .use(mdToc, {
+    // slugify: legacySlugify
+  })
 const detail = ref(null)
 let item = null
 const exist = ref(!!item)
@@ -63,7 +75,8 @@ onMounted(() => {
       const { modifier, content, gmtModified } = res.data.detail
       exist.value = true
       detail.value = {
-        content: md.render(content.replace('[TOC]', '')),
+        // content: md.render(content.replace('[TOC]', '')),
+        content: md.render(content),
         modifier,
         gmtModified,
         originUrl: item.url
@@ -72,3 +85,18 @@ onMounted(() => {
   }
 })
 </script>
+
+<style>
+.table-of-contents {
+  position: fixed;
+  top: 200px;
+  right: calc((100vw - 48rem) / 2);
+  transform: translateX(calc(100% + 15rem));
+}
+@media screen and (max-width: 1440px) {
+  .table-of-contents {
+    transform: translateX(calc(100% + 11rem));
+    font-size: 14px;
+  }
+}
+</style>
