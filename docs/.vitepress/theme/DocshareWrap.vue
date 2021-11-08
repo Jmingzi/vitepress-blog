@@ -51,7 +51,7 @@ let item = null
 const exist = ref(!!item)
 const loading = ref(false)
 
-function get (id) {
+function get ({ docId, shareId }) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     const callback = `_callback_${Date.now()}_${Math.ceil(Math.random() * 10000)}`
@@ -60,7 +60,8 @@ function get (id) {
       window[callback] = undefined
       script.remove()
     }
-    const url = `http://tms.uban360.net/xmflow/jsonp?url=https://docshare.uban360.com/docapi/share/detail?shareId=${id}&_callback=${callback}`
+    // const url = `http://tms.uban360.net/xmflow/jsonp?url=https://docshare.uban360.com/docapi/share/detail?shareId=${id}&_callback=${callback}`
+    const url = `http://tms.uban360.net/xmflow/jsonp?url=${encodeURIComponent(`https://docshare.uban360.com/docapi/share/documentDetail?shareId=${shareId}&documentId=${docId}`)}&_callback=${callback}`
     script.src = url
     script.onload = () => {
     }
@@ -74,9 +75,9 @@ function get (id) {
 onMounted(() => {
   item = findByPath(themeConfig.sidebar['/'])
   // console.log('匹配到路径', item)
-  if (item && item.id) {
+  if (item && item.docId) {
     loading.value = true
-    get(item.id).then(res => {
+    get(item).then(res => {
       loading.value = false
       const { modifier, content, gmtModified } = res.data.detail
       exist.value = true

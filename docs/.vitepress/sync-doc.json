@@ -1,0 +1,257 @@
+[
+  {
+    "text": "新人入职",
+    "branchId": 128,
+    "projectId": 112,
+    "path": "/sync-doc/xin_ren_ru_zhi",
+    "children": [
+      {
+        "text": "团队介绍",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xin_ren_ru_zhi/tuan_dui_jie_shao",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2097,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2097"
+      },
+      {
+        "text": "开发环境搭建",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xin_ren_ru_zhi/kai_fa_huan_jing_da_jian",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2098,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2098"
+      },
+      {
+        "text": "账号创建",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xin_ren_ru_zhi/zhang_hao_chuang_jian",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2099,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2099"
+      },
+      {
+        "text": "工作平台",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xin_ren_ru_zhi/gong_zuo_ping_tai",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2100,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2100"
+      }
+    ]
+  },
+  {
+    "text": "开发环境介绍",
+    "branchId": 128,
+    "projectId": 112,
+    "path": "/sync-doc/kai_fa_huan_jing_jie_shao",
+    "children": [
+      {
+        "text": "BaaS环境",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/kai_fa_huan_jing_jie_shao/BaaS_huan_jing",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2101,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2101"
+      },
+      {
+        "text": "SaaS环境",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/kai_fa_huan_jing_jie_shao/SaaS_huan_jing",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2102,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2102"
+      },
+      {
+        "text": "智慧城市",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/kai_fa_huan_jing_jie_shao/zhi_hui_cheng_shi",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2103,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2103"
+      }
+    ]
+  },
+  {
+    "text": "团队开发规范",
+    "branchId": 128,
+    "projectId": 112,
+    "path": "/sync-doc/tuan_dui_kai_fa_gui_fan",
+    "children": [
+      {
+        "text": "vue项目及代码规范",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/tuan_dui_kai_fa_gui_fan/vue_xiang_mu_ji_dai_ma_gui_fan",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2104,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2104"
+      },
+      {
+        "text": "react项目及代码规范",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/tuan_dui_kai_fa_gui_fan/react_xiang_mu_ji_dai_ma_gui_fan",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2105,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2105"
+      },
+      {
+        "text": "分支命令规范",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/tuan_dui_kai_fa_gui_fan/fen_zhi_ming_ling_gui_fan",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2106,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2106"
+      },
+      {
+        "text": "代码提交规范",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/tuan_dui_kai_fa_gui_fan/dai_ma_ti_jiao_gui_fan",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2107,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2107"
+      }
+    ]
+  },
+  {
+    "text": "项目开发流程",
+    "branchId": 128,
+    "projectId": 112,
+    "path": "/sync-doc/xiang_mu_kai_fa_liu_cheng",
+    "children": [
+      {
+        "text": "项目创建",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xiang_mu_kai_fa_liu_cheng/xiang_mu_chuang_jian",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2109,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2109"
+      },
+      {
+        "text": "项目开发与提测",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xiang_mu_kai_fa_liu_cheng/xiang_mu_kai_fa_yu_ti_di_ce",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2110,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2110"
+      },
+      {
+        "text": "项目发布",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/xiang_mu_kai_fa_liu_cheng/xiang_mu_fa_bu",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2111,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2111"
+      }
+    ]
+  },
+  {
+    "text": "技术体系",
+    "branchId": 128,
+    "projectId": 112,
+    "path": "/sync-doc/ji_shu_ti_xi",
+    "children": [
+      {
+        "text": "微服务",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/ji_shu_ti_xi/wei_fu_wu",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2112,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2112"
+      },
+      {
+        "text": "小程序",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/ji_shu_ti_xi/xiao_cheng_xu",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2113,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2113"
+      },
+      {
+        "text": "h5 hybrid",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/ji_shu_ti_xi/h5 hybrid",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2114,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2114"
+      },
+      {
+        "text": "数据可视化",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/ji_shu_ti_xi/shu_ju_ke_shi_hua",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2115,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2115"
+      }
+    ]
+  },
+  {
+    "text": "组件与工具",
+    "branchId": 128,
+    "projectId": 112,
+    "path": "/sync-doc/zu_jian_yu_gong_ju",
+    "children": [
+      {
+        "text": "vue组件库",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/zu_jian_yu_gong_ju/vue_zu_jian_ku",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2116,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2116"
+      },
+      {
+        "text": "react组件库",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/zu_jian_yu_gong_ju/react_zu_jian_ku",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2117,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2117"
+      },
+      {
+        "text": "iconfont库",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/zu_jian_yu_gong_ju/iconfont_ku",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2118,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2118"
+      },
+      {
+        "text": "代码最佳实践库",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/zu_jian_yu_gong_ju/dai_ma_zui_jia_shi_jian_ku",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2119,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2119"
+      },
+      {
+        "text": "图表库",
+        "branchId": 128,
+        "projectId": 112,
+        "link": "/sync-doc/zu_jian_yu_gong_ju/tu_biao_ku",
+        "shareId": "be8d215717ed9c4eef808242a9039380",
+        "docId": 2120,
+        "url": "https://docs.uban360.com/project-detail/article/128/112/2120"
+      }
+    ]
+  }
+]
