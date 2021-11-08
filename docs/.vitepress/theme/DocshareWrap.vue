@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!exist" style="padding-top: 40px;padding-bottom: 100px;text-align: center">
+  <div v-if="!loading && !exist" style="padding-top: 40px;padding-bottom: 100px;text-align: center">
     <h1>404</h1>
     <p>文章不存在哦，试试新的链接吧～</p>
   </div>
@@ -26,6 +26,9 @@ import mdAnchor from 'markdown-it-anchor'
 import mdToc from 'markdown-it-toc-done-right'
 
 const { themeConfig } = config
+function legacySlugify(s) {
+  return String(s).trim().toLowerCase().replace(/\s+|\.|\/|/g, '-')
+}
 const md = new MarkdownIt({
   html: true,
   breaks: true,
@@ -37,15 +40,16 @@ md.use(preWrapperPlugin)
   .use(mdAnchor, {
     permalink: true,
     permalinkBefore: true,
-    permalinkSymbol: '§'
-    // slugify: legacySlugify
+    permalinkSymbol: '§',
+    slugify: legacySlugify
   })
   .use(mdToc, {
-    // slugify: legacySlugify
+    slugify: legacySlugify
   })
 const detail = ref(null)
 let item = null
 const exist = ref(!!item)
+const loading = ref(false)
 
 function get (id) {
   return new Promise((resolve, reject) => {
@@ -71,7 +75,9 @@ onMounted(() => {
   item = findByPath(themeConfig.sidebar['/'])
   // console.log('匹配到路径', item)
   if (item && item.id) {
+    loading.value = true
     get(item.id).then(res => {
+      loading.value = false
       const { modifier, content, gmtModified } = res.data.detail
       exist.value = true
       detail.value = {

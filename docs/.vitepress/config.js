@@ -108,7 +108,23 @@ export default {
           children: [
             { text: 'Baas 环境', link: '/business/baas', id: 'ae9540ab84d62c9e7b43a3779f147802', url: 'https://docs.uban360.com/project-detail/article/101/52/1730' },
             { text: 'Saas 环境', link: '/business/saas', id: '0a5e446264043213a2f4bb67a618e80c', url: 'https://docs.uban360.com/project-detail/article/101/52/1731' },
-            { text: '智慧城市', link: '/business/smart-city', id: 'a76754f04092655b2030e583b403ecad', url: 'https://docs.uban360.com/project-detail/article/101/52/1732' }
+            {
+              text: '智慧城市',
+              children: [
+                {
+                  text: '业务介绍',
+                  link: '/business/smart-city',
+                  id: 'a76754f04092655b2030e583b403ecad',
+                  url: 'https://docs.uban360.com/project-detail/article/101/52/1732'
+                },
+                {
+                  text: '小程序上下架、门户配置教程',
+                  link: '/business/smart-city-mp-door',
+                  id: 'ea55f8ca40dc3974da8b96204730bcb3',
+                  url: 'https://docs.uban360.com/project-detail/article/39/51/1640'
+                }
+              ]
+            }
           ]
         },
         {
