@@ -1,6 +1,5 @@
 export function findByPath (array) {
-  const path = location.pathname.replace('.html', '') + location.search
-  // console.log(path)
+  const path = decodeURIComponent(location.pathname.replace('.html', '') + location.search)
   const find = (arr, path) => {
     for (const item of arr) {
       if (item.children) {

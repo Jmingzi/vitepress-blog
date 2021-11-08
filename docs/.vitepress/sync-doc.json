@@ -50,6 +50,23 @@
     "path": "/sync-doc/kai_fa_huan_jing_jie_shao",
     "children": [
       {
+        "text": "智慧城市",
+        "branchId": 128,
+        "projectId": 112,
+        "path": "/sync-doc/kai_fa_huan_jing_jie_shao/zhi_hui_cheng_shi",
+        "children": [
+          {
+            "text": "小程序上下架、门户配置教程",
+            "branchId": 128,
+            "projectId": 112,
+            "link": "/sync-doc/kai_fa_huan_jing_jie_shao/zhi_hui_cheng_shi/xiao_cheng_xu_shang_xia_jia_、_men_hu_pei_zhi_jiao_cheng",
+            "shareId": "be8d215717ed9c4eef808242a9039380",
+            "docId": 2123,
+            "url": "https://docs.uban360.com/project-detail/article/128/112/2123"
+          }
+        ]
+      },
+      {
         "text": "BaaS环境",
         "branchId": 128,
         "projectId": 112,
@@ -66,15 +83,6 @@
         "shareId": "be8d215717ed9c4eef808242a9039380",
         "docId": 2102,
         "url": "https://docs.uban360.com/project-detail/article/128/112/2102"
-      },
-      {
-        "text": "智慧城市",
-        "branchId": 128,
-        "projectId": 112,
-        "link": "/sync-doc/kai_fa_huan_jing_jie_shao/zhi_hui_cheng_shi",
-        "shareId": "be8d215717ed9c4eef808242a9039380",
-        "docId": 2103,
-        "url": "https://docs.uban360.com/project-detail/article/128/112/2103"
       }
     ]
   },
