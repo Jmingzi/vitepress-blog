@@ -35,13 +35,19 @@ export default {
               url: 'https://docs.uban360.com/project-detail/article/101/52/1726'
             },
             {
-              text: '开发环境及账号',
-              link: '/guide/env-account',
+              text: '开发环境搭建',
+              link: '/guide/dev-env',
               id: '56df0f4458e9a3269a287946f59c28ed',
               url: 'https://docs.uban360.com/project-detail/article/101/52/1727'
             },
             {
-              text: '工作平台及方式',
+              text: '账号创建',
+              link: '/guide/account',
+              id: '70351510678b847437892d4967b6c5d0',
+              url: 'https://docs.uban360.com/project-detail/article/101/52/2090'
+            },
+            {
+              text: '工作平台',
               link: '/guide/platform',
               id: '8065cfeb88d7d204835cd0a13b0f6fd0',
               url: 'https://docs.uban360.com/project-detail/article/101/52/1729'
