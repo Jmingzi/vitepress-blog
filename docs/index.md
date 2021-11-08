@@ -5,7 +5,7 @@ heroAlt: Logo image
 heroText: 讯盟前端团队
 tagline: slogan
 actionText: 开始了解
-actionLink: /guide/
+actionLink: /sync-doc/xin_ren_ru_zhi/tuan_dui_jie_shao
 
 altActionText: 文档贡献
 altActionLink: /contribute
