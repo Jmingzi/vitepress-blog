@@ -1,14 +1,12 @@
-import DefaultTheme from 'vitepress/theme'
-import './custom.css'
-import MyLayout from './MyLayout.vue'
-import DocshareWrap from './DocshareWrap.vue'
-
-export default {
-  ...DefaultTheme,
-  // override the Layout with a wrapper component that injects the slots
-  Layout: MyLayout,
-  enhanceApp({ app }) {
-    // register global components
-    app.component('docshare-wrap', DocshareWrap)
-  }
-}
+import './styles/vars.css';
+import './styles/layout.css';
+import './styles/code.css';
+import './styles/custom-blocks.css';
+import './styles/sidebar-links.css';
+import Layout from './Layout.vue';
+import NotFound from './NotFound.vue';
+const theme = {
+    Layout,
+    NotFound
+};
+export default theme;
