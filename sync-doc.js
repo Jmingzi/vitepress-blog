@@ -1,4 +1,4 @@
-const urllib = require('urllib')
+// const urllib = require('urllib')
 const path = require('path')
 const fs = require('fs-extra')
 const rm = require('rimraf')
@@ -10,19 +10,9 @@ const appKey = 'OR3zEynwWJ7f8bk95AdiGFzJ'
 const serverURLs = 'https://api.iming.work'
 AV.init({ appId, appKey, serverURLs })
 
-const docPath = path.resolve(__dirname, 'docs/detail')
+const docPath = path.resolve(__dirname, 'docs/sync-doc')
 const configPath = path.resolve(__dirname, 'docs/.vitepress/sync-doc.json')
 const json = []
-
-// async function getDirs () {
-//   const { data: { share, detail } } = await httpGet(`${DOC_DOMAIN}/docapi/share/detail?shareId=${DOC_DIR}`)
-//   // 生成新文件到 sync-doc
-//   rm.sync(docPath)
-//   fs.ensureDirSync(docPath)
-//   const result = []
-//   genDirsAndMd(result, detail.branch.catelogs, { branchId: detail.branch.id, projectId: detail.id })
-//   return JSON.stringify(result, null, 2)
-// }
 
 function getAv () {
   const instance = new AV.Query('Article')
@@ -54,7 +44,7 @@ async function genDirsAndMd (result) {
       console.log(`生成[${item.text}]...`)
       // const pinyin = getPinYin(item.text)
       const { input } = (await getDetail(item.id)).toJSON()
-      item.link = `/${path.join('detail', item.id)}`
+      item.link = `/${path.join('sync-doc', item.id)}`
       fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
     }
   }
