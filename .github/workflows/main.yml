@@ -37,7 +37,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run build
         run: |
-          npm run prepare
+          npm --version
           npm run "docs:build"
           echo test, and deploy your project
         env:
@@ -59,7 +59,7 @@ jobs:
           # Source directory
           SOURCE: docs/.vitepress/dist # optional, default is 
           # Target directory
-          TARGET: /home/ # optional, default is /home/
+          TARGET: /home/vitepress-blog/ # optional, default is /home/
           # Arguments to pass to rsync
           # ARGS: # optional, default is -rltgoDzvO
           # An array of folder to exclude
