@@ -37,7 +37,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run build
         run: |
-          npm --version
+          npm run prepare
           npm run "docs:build"
           echo test, and deploy your project
         env:
