@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import PageFooter from './PageFooter.vue'
 import NextAndPrevLinks from './NextAndPrevLinks.vue'
+import HomeHero from './HomeHero.vue'
 </script>
 
 <template>
+  <HomeHero />
   <main class="page">
     <div class="container">
       <slot name="top" />
@@ -17,7 +19,7 @@ import NextAndPrevLinks from './NextAndPrevLinks.vue'
   </main>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .page {
   padding-top: var(--header-height);
 }
@@ -35,7 +37,7 @@ import NextAndPrevLinks from './NextAndPrevLinks.vue'
 }
 
 .container {
-  margin: 0 auto;
+  //margin: 0 auto;
   padding: 0 1.5rem 4rem;
   max-width: 48rem;
 }

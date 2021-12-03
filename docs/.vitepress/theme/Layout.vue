@@ -94,7 +94,7 @@ const pageClasses = computed(() => {
       </template>
     </NavBar>
 
-    <SideBar :open="openSideBar">
+    <SideBar v-if="false" :open="openSideBar">
       <template #sidebar-top>
         <slot name="sidebar-top" />
       </template>

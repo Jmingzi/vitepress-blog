@@ -18,17 +18,18 @@ const tagline = computed(
 </script>
 
 <template>
-  <header v-if="showHero" class="home-hero">
-    <figure v-if="frontmatter.heroImage" class="figure">
+  <header class="home-hero">
+    <figure class="figure">
       <img
         class="image"
-        :src="withBase(frontmatter.heroImage)"
+        :src="withBase('/logo.png')"
         :alt="frontmatter.heroAlt"
       />
     </figure>
 
-    <h1 v-if="heroText" id="main-title" class="title">{{ heroText }}</h1>
-    <p v-if="tagline" class="tagline">{{ tagline }}</p>
+    <h1 v-if="false" id="main-title" class="title">{{ heroText }}</h1>
+    <p v-if="false" class="tagline">{{ tagline }}</p>
+    <p>{{ '前端开发 / 杭州' }}</p>
 
     <NavLink
       v-if="frontmatter.actionLink && frontmatter.actionText"
@@ -47,27 +48,34 @@ const tagline = computed(
   </header>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .home-hero {
-  margin: 2.5rem 0 2.75rem;
-  padding: 0 1.5rem;
+  position: fixed;
+  left: 1.5em;
+  top: var(--header-height);
+  padding-top: 1.3em;
+  //top: 50%;
+  //transform: translateY(-50%);
+  //margin: 2.5rem 0 2.75rem;
+  //padding: 0 1.5rem;
   text-align: center;
+  z-index: 2;
 }
 
-@media (min-width: 420px) {
-  .home-hero {
-    margin: 3.5rem 0;
-  }
-}
-
-@media (min-width: 720px) {
-  .home-hero {
-    margin: 4rem 0 4.25rem;
-  }
-}
+//@media (min-width: 420px) {
+//  .home-hero {
+//    margin: 3.5rem 0;
+//  }
+//}
+//
+//@media (min-width: 720px) {
+//  .home-hero {
+//    margin: 4rem 0 4.25rem;
+//  }
+//}
 
 .figure {
-  padding: 0 1.5rem;
+  padding: 0 1.2rem;
 }
 
 .image {
@@ -75,7 +83,7 @@ const tagline = computed(
   margin: 0 auto;
   width: auto;
   max-width: 100%;
-  max-height: 280px;
+  max-height: 130px;
 }
 
 .title {

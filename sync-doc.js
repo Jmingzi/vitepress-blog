@@ -3,75 +3,91 @@ const path = require('path')
 const fs = require('fs-extra')
 const rm = require('rimraf')
 const pinyin = require('pinyin')
+const AV = require('leancloud-storage')
 
-const docPath = path.resolve(__dirname, 'docs/sync-doc')
+const appId = 'iYzWnL2H72jtQgNQPXUvjFqU-gzGzoHsz'
+const appKey = 'OR3zEynwWJ7f8bk95AdiGFzJ'
+const serverURLs = 'https://api.iming.work'
+AV.init({ appId, appKey, serverURLs })
+
+const docPath = path.resolve(__dirname, 'docs/detail')
 const configPath = path.resolve(__dirname, 'docs/.vitepress/sync-doc.json')
-const DOC_DIR = 'be8d215717ed9c4eef808242a9039380'
-const DOC_DOMAIN = 'https://docshare.uban360.com'
-async function httpGet (url) {
-  return new Promise((resolve, reject) => {
-    urllib.request(url, {
-      dataType: 'json'
-    }, (err, data) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(data)
-      }
-    })
+const json = []
+
+// async function getDirs () {
+//   const { data: { share, detail } } = await httpGet(`${DOC_DOMAIN}/docapi/share/detail?shareId=${DOC_DIR}`)
+//   // 生成新文件到 sync-doc
+//   rm.sync(docPath)
+//   fs.ensureDirSync(docPath)
+//   const result = []
+//   genDirsAndMd(result, detail.branch.catelogs, { branchId: detail.branch.id, projectId: detail.id })
+//   return JSON.stringify(result, null, 2)
+// }
+
+function getAv () {
+  const instance = new AV.Query('Article')
+  instance.select(['title', 'tag', 'isOuterLink', 'type'])
+  instance.notEqualTo('type', 'record-days')
+  instance.descending('createdAt')
+  return instance.find()
+}
+
+function getDetail (id) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(new AV.Query('Article').get(id))
+    }, 300)
   })
 }
 
-async function getDirs () {
-  const { data: { share, detail } } = await httpGet(`${DOC_DOMAIN}/docapi/share/detail?shareId=${DOC_DIR}`)
-  // 生成新文件到 sync-doc
-  rm.sync(docPath)
-  fs.ensureDirSync(docPath)
-  const result = []
-  genDirsAndMd(result, detail.branch.catelogs, { branchId: detail.branch.id, projectId: detail.id })
-  return JSON.stringify(result, null, 2)
-}
-
-function genDirsAndMd (result, arr, { path: pPath = '/sync-doc/', branchId, projectId }) {
-  // const result = []
-  arr.forEach(catelog => {
-    const item = { text: catelog.name, branchId, projectId }
-    const isDoc = !!catelog.catelogId
-    const pinyin = getPinYin(catelog.name)
-    if (isDoc) {
-      item.link = path.join(pPath, pinyin)
-      item.shareId = DOC_DIR
-      item.docId = catelog.id
-      item.url = `https://docs.uban360.com/project-detail/article/${branchId}/${projectId}/${catelog.id}`
-      // 生成文章
-      fs.outputFileSync(path.join(docPath, '../', item.link + '.md'), `# ${item.text}\n<docshare-wrap />`)
-    } else {
-      item.path = path.join(pPath, pinyin)
-      item.children = []
-      // 生成目录
-      fs.ensureDirSync(path.join(docPath, pinyin))
-      if (catelog.children.length) {
-        genDirsAndMd(item.children, catelog.children, item)
-      }
+async function genDirsAndMd (result) {
+  for (const year of Object.keys(result).reverse()) {
+    let jsonItem = json.find(x => x.text.startsWith(year))
+    if (!jsonItem) {
+      jsonItem = { text: `${year}年`, children: [] }
+      json.push(jsonItem)
     }
-    // console.log(item)
-    result.push(item)
-  })
-  // return result
+
+    const value = result[year]
+    for (const item of value) {
+      jsonItem.children.push(item)
+      console.log(`生成[${item.text}]...`)
+      // const pinyin = getPinYin(item.text)
+      const { input } = (await getDetail(item.id)).toJSON()
+      item.link = `/${path.join('detail', item.id)}`
+      fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
+    }
+  }
 }
 
 function getPinYin (str) {
-  return pinyin(str, {
+  return pinyin(str.replace(/\//g, '_'), {
     style: pinyin.STYLE_NORMAL, // 设置拼音风格
     heteronym: true,
     segment: true // 启用分词
     // group: true
-  }).flat().join('_')
+  }).flat().join('').replace(/\s+/g, '')
 }
 
 async function run () {
-  const json = await getDirs()
-  await fs.outputFile(configPath, json)
+  rm.sync(docPath)
+  fs.ensureDirSync(docPath)
+
+  const res = await getAv()
+  const result = {}
+  res.forEach(j => {
+    const x = j.toJSON()
+    const year = x.updatedAt.split('T')[0].split('-')[0]
+    if (!result[year]) {
+      result[year] = []
+    }
+    if (!x.tag.startsWith('http')) {
+      result[year].push({ text: x.title, id: j.id, tag: x.tag, updatedAt: x.updatedAt })
+    }
+  })
+  // 分组
+  await genDirsAndMd(result)
+  await fs.outputFile(configPath, JSON.stringify(json, null, 2))
   console.log('写入配置完成')
 }
 

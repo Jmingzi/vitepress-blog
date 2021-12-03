@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import HomeHero from './HomeHero.vue'
-import HomeFeatures from './HomeFeatures.vue'
+// import HomeFeatures from './HomeFeatures.vue'
 import HomeFooter from './HomeFooter.vue'
+import ArticleGroup from './ArticleGroup.vue'
+import { useSideBar } from '../composables/sideBar'
+
+const items = useSideBar()
 </script>
 
 <template>
+  <HomeHero />
   <main class="home" aria-labelledby="main-title">
-    <HomeHero />
-    <slot name="hero" />
-    <HomeFeatures />
     <div class="home-content">
-      <Content />
+      <ArticleGroup v-for="item of items" :item="item" />
     </div>
-    <slot name="features" />
     <HomeFooter />
-    <slot name="footer" />
   </main>
 </template>
 
@@ -24,7 +24,7 @@ import HomeFooter from './HomeFooter.vue'
 }
 
 .home-content {
-  max-width: 960px;
+  max-width: 48em;
   margin: 0px auto;
   padding: 0 1.5rem;
 }

@@ -10,7 +10,7 @@ const { site, theme, localePath } = useData()
     :aria-label="`${site.title}, back to home`"
   >
     <img
-      v-if="theme.logo"
+      v-if="theme.logo && false"
       class="logo"
       :src="withBase(theme.logo)"
       alt="Logo"
@@ -19,11 +19,15 @@ const { site, theme, localePath } = useData()
   </a>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .nav-bar-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--c-text);
+  font-size: 1.2rem;
+  font-weight: 400;
+  //color: var(--c-text);
+  background-color: var(--c-brand);
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 2px;
 }
 
 .nav-bar-title:hover {

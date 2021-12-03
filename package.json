@@ -1,15 +1,17 @@
 {
-  "name": "shinemofe",
+  "name": "vitepress-blog",
   "version": "1.0.0",
   "scripts": {
-    "docs:dev": "node ./sync-doc.js && vitepress dev docs",
-    "docs:build": "node ./sync-doc.js && vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs && node after-build.js",
+    "prepare": "node ./sync-doc.js"
   },
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "fs-extra": "^10.0.0",
+    "leancloud-storage": "^4.12.0",
+    "less": "^4.1.2",
     "pinyin": "^2.10.2",
     "rimraf": "^3.0.2",
     "urllib": "^2.37.4",

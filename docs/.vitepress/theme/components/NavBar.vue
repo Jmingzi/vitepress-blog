@@ -22,7 +22,7 @@ defineEmits(['toggle'])
   </header>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .nav-bar {
   position: fixed;
   top: 0;
@@ -32,10 +32,11 @@ defineEmits(['toggle'])
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--c-divider);
+  //border-bottom: 1px solid var(--c-divider);
   padding: 0.7rem 1.5rem 0.7rem 4rem;
   height: var(--header-height);
-  background-color: var(--c-bg);
+  //background-color: var(--c-bg);
+  background-color: transparent;
 }
 
 @media (min-width: 720px) {

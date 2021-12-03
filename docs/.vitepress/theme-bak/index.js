@@ -1,4 +1,4 @@
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-bak'
 import './custom.css'
 import MyLayout from './MyLayout.vue'
 import DocshareWrap from './DocshareWrap.vue'

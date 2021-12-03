@@ -2,13 +2,12 @@
 home: true
 heroImage: /logo.png
 heroAlt: Logo image
-heroText: 讯盟前端团队
-tagline: slogan
-actionText: 开始了解
-actionLink: /sync-doc/xin_ren_ru_zhi/tuan_dui_jie_shao
-
-altActionText: 文档贡献
-altActionLink: /contribute
+heroText: 杭州 / 前端开发
+tagline: 
+actionText: 
+actionLink: 
+altActionText: 
+altActionLink: 
 
 features:
 - title: Baas 运营商团队
@@ -17,5 +16,5 @@ features:
   details: 主要内容为可视化中小屏，领导驾驶舱，数据魔方，一网统管，智慧校园，运营平台，内部项目平台等。
 - title: 数字政企团队
   details: 待补充。
-footer: MIT Licensed | Copyright © 讯盟前端团队
+footer: © Jmingzi  鄂ICP备18011687号-1
 ---
