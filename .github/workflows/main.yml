@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: use Node.js 16
         uses: actions/setup-node@v1
         with:
@@ -37,11 +37,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run build
         run: |
-          npm run docs:build,
+          npm run "docs:build",
           echo test, and deploy your project.
         env:
-          CI: true  
-      
+          CI: true
+
       - name: ssh deploy
         # You may pin to the exact commit or the version.
         # uses: easingthemes/ssh-deploy@c711f2c3391cac2876bf4c833590077f02e4bcb8
@@ -56,11 +56,11 @@ jobs:
           # Remote port
           # REMOTE_PORT: # optional, default is 22
           # Source directory
-          SOURCE: docs/.vitepress/dist # optional, default is 
+          SOURCE: docs/.vitepress/dist # optional, default is
           # Target directory
           TARGET: /home/ # optional, default is /home/
           # Arguments to pass to rsync
           # ARGS: # optional, default is -rltgoDzvO
           # An array of folder to exclude
-          # EXCLUDE: # optional, default is 
-      
+          # EXCLUDE: # optional, default is
+
