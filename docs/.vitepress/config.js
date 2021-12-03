@@ -3,7 +3,7 @@ import syncDoc from './sync-doc.json'
 export default {
   title: 'Jmingzi 的博客',
   description: 'jmingzi的个人博客，前端基础教程、前端框架学习、前端代码分享、前端技术指导、分享在工作中总结的实战开发经验',
-  base: '/',
+  base: './',
 
   themeConfig: {
     repo: 'https://github.com/jmingzi',
