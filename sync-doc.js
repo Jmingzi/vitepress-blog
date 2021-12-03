@@ -10,7 +10,7 @@ const appKey = 'OR3zEynwWJ7f8bk95AdiGFzJ'
 const serverURLs = 'https://api.iming.work'
 AV.init({ appId, appKey, serverURLs })
 
-const docPath = path.resolve(__dirname, 'docs/sync-doc')
+const docPath = path.resolve(__dirname, 'docs/detail')
 const configPath = path.resolve(__dirname, 'docs/.vitepress/sync-doc.json')
 const json = []
 
@@ -44,7 +44,7 @@ async function genDirsAndMd (result) {
       console.log(`生成[${item.text}]...`)
       // const pinyin = getPinYin(item.text)
       const { input } = (await getDetail(item.id)).toJSON()
-      item.link = `/${path.join('sync-doc', item.id)}`
+      item.link = `/${path.join('detail', item.id)}`
       fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
     }
   }
