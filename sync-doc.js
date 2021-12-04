@@ -71,7 +71,7 @@ async function run () {
     if (!result[year]) {
       result[year] = []
     }
-    if (!x.tag.startsWith('http')) {
+    if (!x.tag || !x.tag.startsWith('http')) {
       result[year].push({ text: x.title, id: j.id, tag: x.tag, updatedAt: x.updatedAt })
     }
   })
