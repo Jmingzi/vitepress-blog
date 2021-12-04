@@ -46,6 +46,6 @@ const { frontmatter } = useData()
   text-align: center;
   line-height: 1.4;
   font-size: 0.9rem;
-  color: var(--c-text-light);
+  color: var(--c-text-tip);
 }
 </style>

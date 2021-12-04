@@ -29,7 +29,7 @@ const tagline = computed(
 
     <h1 v-if="false" id="main-title" class="title">{{ heroText }}</h1>
     <p v-if="false" class="tagline">{{ tagline }}</p>
-    <p>{{ '前端开发 / 杭州' }}</p>
+    <p style="color: var(--c-text-tip)">{{ 'Keep calm & thinking' }}</p>
 
     <NavLink
       v-if="frontmatter.actionLink && frontmatter.actionText"
@@ -75,7 +75,7 @@ const tagline = computed(
 //}
 
 .figure {
-  padding: 0 1.2rem;
+  padding: 0 2.1rem;
 }
 
 .image {
@@ -83,7 +83,8 @@ const tagline = computed(
   margin: 0 auto;
   width: auto;
   max-width: 100%;
-  max-height: 130px;
+  max-height: 100px;
+  border-radius: 50%;
 }
 
 .title {
