@@ -33,7 +33,7 @@ const getLink = (item) => {
         class="article-group__item">
         <div class="article-group__item-title">
           <a :href="getLink(child)">{{ child.text }}</a>
-          <div class="article-group__tags">
+          <div v-if="child.tag" class="article-group__tags">
             <span v-for="it in child.tag.split('、')" class="article-group__tag">{{ it }}</span>
           </div>
         </div>
