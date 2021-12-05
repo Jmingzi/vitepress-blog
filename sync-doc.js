@@ -12,7 +12,11 @@ AV.init({ appId, appKey, serverURLs })
 
 const docPath = path.resolve(__dirname, 'docs/detail')
 const configPath = path.resolve(__dirname, 'docs/.vitepress/sync-doc.json')
+const diffConfigPath = path.resolve(__dirname, 'sync-doc-config.json')
+const diffConfig = fs.pathExistsSync(diffConfigPath) ? fs.readJsonSync(diffConfigPath) : {}
 const json = []
+
+fs.ensureFileSync(diffConfigPath)
 
 function getAv () {
   const instance = new AV.Query('Article')
@@ -40,12 +44,16 @@ async function genDirsAndMd (result) {
 
     const value = result[year]
     for (const item of value) {
+      const needUpdate = !diffConfig[item.id] || (new Date(item.updatedAt).getTime() > diffConfig[item.id])
       jsonItem.children.push(item)
-      console.log(`生成[${item.text}]...`)
-      // const pinyin = getPinYin(item.text)
-      const { input } = (await getDetail(item.id)).toJSON()
-      item.link = `/${path.join('detail', item.id)}`
-      fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
+      if (needUpdate) {
+        console.log(`生成[${item.text}]...`)
+        // const pinyin = getPinYin(item.text)
+        const { input } = (await getDetail(item.id)).toJSON()
+        item.link = `/${path.join('detail', item.id)}`
+        fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
+        diffConfig[item.id] = Date.now()
+      }
     }
   }
 }
@@ -60,24 +68,31 @@ function getPinYin (str) {
 }
 
 async function run () {
-  rm.sync(docPath)
+  // rm.sync(docPath)
   fs.ensureDirSync(docPath)
 
   const res = await getAv()
   const result = {}
   res.forEach(j => {
     const x = j.toJSON()
-    const year = x.updatedAt.split('T')[0].split('-')[0]
+    const year = x.createdAt.split('T')[0].split('-')[0]
     if (!result[year]) {
       result[year] = []
     }
     if (!x.tag || !x.tag.startsWith('http')) {
-      result[year].push({ text: x.title, id: j.id, tag: x.tag, updatedAt: x.updatedAt })
+      result[year].push({
+        text: x.title,
+        id: j.id,
+        tag: x.tag,
+        createdAt: x.createdAt,
+        updatedAt: x.updatedAt
+      })
     }
   })
   // 分组
   await genDirsAndMd(result)
   await fs.outputFile(configPath, JSON.stringify(json, null, 2))
+  await fs.outputFile(diffConfigPath, JSON.stringify(diffConfig, null, 2))
   console.log('写入配置完成')
 }
 

@@ -37,7 +37,7 @@ const getLink = (item) => {
             <span v-for="it in child.tag.split('、')" class="article-group__tag">{{ it }}</span>
           </div>
         </div>
-        <p class="article-group__item-date">{{ child.updatedAt.split('T')[0].split('-').slice(1).join('/') }}</p>
+        <p class="article-group__item-date">{{ child.createdAt.split('T')[0].split('-').slice(1).join('/') }}</p>
       </li>
     </ul>
   </section>
