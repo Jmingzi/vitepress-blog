@@ -44,7 +44,7 @@ function getDocConfig () {
           resolve({})
         })
       } else {
-        resolve(data)
+        resolve(typeof data === 'string' ? JSON.parse(data) : data)
       }
     })
   })
