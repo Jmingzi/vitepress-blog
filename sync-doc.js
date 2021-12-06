@@ -63,11 +63,11 @@ async function genDirsAndMd (result) {
     for (const item of value) {
       const needUpdate = !diffConfig[item.id] || (new Date(item.updatedAt).getTime() > diffConfig[item.id])
       jsonItem.children.push(item)
+      item.link = `/${path.join('detail', item.id)}`
       if (needUpdate) {
         console.log(`生成[${item.text}]...`)
         // const pinyin = getPinYin(item.text)
         const { input } = (await getDetail(item.id)).toJSON()
-        item.link = `/${path.join('detail', item.id)}`
         fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
         diffConfig[item.id] = Date.now()
       }
