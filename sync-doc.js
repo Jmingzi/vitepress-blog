@@ -1,8 +1,8 @@
-// const urllib = require('urllib')
+const urllib = require('urllib')
 const path = require('path')
 const fs = require('fs-extra')
-const rm = require('rimraf')
-const pinyin = require('pinyin')
+// const rm = require('rimraf')
+// const pinyin = require('pinyin')
 const AV = require('leancloud-storage')
 
 const appId = 'iYzWnL2H72jtQgNQPXUvjFqU-gzGzoHsz'
@@ -12,11 +12,8 @@ AV.init({ appId, appKey, serverURLs })
 
 const docPath = path.resolve(__dirname, 'docs/detail')
 const configPath = path.resolve(__dirname, 'docs/.vitepress/sync-doc.json')
-const diffConfigPath = path.resolve(__dirname, 'sync-doc-config.json')
-const diffConfig = fs.pathExistsSync(diffConfigPath) ? fs.readJsonSync(diffConfigPath) : {}
+const diffConfigPath = path.resolve(__dirname, './docs/public/sync-doc-config.json')
 const json = []
-
-fs.ensureFileSync(diffConfigPath)
 
 function getAv () {
   const instance = new AV.Query('Article')
@@ -34,7 +31,27 @@ function getDetail (id) {
   })
 }
 
+function getDocConfig () {
+  return new Promise((resolve, reject) => {
+    urllib.request('https://iming.work/demo/vitepress-blog/dist/sync-doc-config.json', {
+      method: 'GET',
+      dataType: 'json'
+    }, (err, data) => {
+      if (err) {
+        fs.readFile(diffConfigPath, 'utf8').then(res => {
+          resolve(res)
+        }).catch(() => {
+          resolve({})
+        })
+      } else {
+        resolve(data)
+      }
+    })
+  })
+}
+
 async function genDirsAndMd (result) {
+  const diffConfig = await getDocConfig()
   for (const year of Object.keys(result).reverse()) {
     let jsonItem = json.find(x => x.text.startsWith(year))
     if (!jsonItem) {
@@ -56,16 +73,18 @@ async function genDirsAndMd (result) {
       }
     }
   }
+
+  return diffConfig
 }
 
-function getPinYin (str) {
-  return pinyin(str.replace(/\//g, '_'), {
-    style: pinyin.STYLE_NORMAL, // 设置拼音风格
-    heteronym: true,
-    segment: true // 启用分词
-    // group: true
-  }).flat().join('').replace(/\s+/g, '')
-}
+// function getPinYin (str) {
+//   return pinyin(str.replace(/\//g, '_'), {
+//     style: pinyin.STYLE_NORMAL, // 设置拼音风格
+//     heteronym: true,
+//     segment: true // 启用分词
+//     // group: true
+//   }).flat().join('').replace(/\s+/g, '')
+// }
 
 async function run () {
   // rm.sync(docPath)
@@ -90,11 +109,10 @@ async function run () {
     }
   })
   // 分组
-  await genDirsAndMd(result)
+  const diffConfig = await genDirsAndMd(result)
   await fs.outputFile(configPath, JSON.stringify(json, null, 2))
   await fs.outputFile(diffConfigPath, JSON.stringify(diffConfig, null, 2))
   console.log('写入配置完成')
 }
 
 run()
-// console.log(getPinYin('团队风格 style'))
