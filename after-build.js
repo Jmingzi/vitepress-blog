@@ -1,18 +1,42 @@
 const fs = require('fs-extra')
 const path = require('path')
 const html = path.resolve(__dirname, 'docs/.vitepress/dist/index.html')
+const htmlDir = path.resolve(__dirname, 'docs/.vitepress/dist/detail')
+const json = require('./docs/.vitepress/sync-doc.json')
 
-fs.outputFile(
-  html,
-  fs.readFileSync(html, 'utf8')
-    .replace('</body>', `
+const addMeta = (file, id) => {
+  const item = id ? find(id) : null
+  fs.outputFile(
+    file,
+    fs.readFileSync(file, 'utf8')
+      .replace('</body>', `
     <script src="https://s19.cnzz.com/z_stat.php?id=1274714892&web_id=1274714892"></script>
   </body>`)
-    .replace('</head>', `  <meta name="google-site-verification" content="TbvyCK9sEBOqr5fAbXQ2uLNMgTDgn4wmpBM747LhOwk" />
+      .replace('</head>', `  <meta name="google-site-verification" content="TbvyCK9sEBOqr5fAbXQ2uLNMgTDgn4wmpBM747LhOwk" />
     <style>
       a[title="站长统计"] {
         display: none!important;
       }
     </style>
   </head>`)
-)
+      .replace('</title>', item ? `</title>
+    <meta name="keywords" content="${item.tag.split('、').join('，')}" />` : '</title>')
+      .replace('jmingzi的个人博客', (item ? (item.tag.split('、').join('，') + '，') : '') + 'jmingzi的个人博客')
+  )
+}
+
+const find = (id) => {
+  for (const it of json) {
+    for (const child of it.children) {
+      if (child.id === id) {
+        return child
+      }
+    }
+  }
+}
+
+addMeta(html)
+fs.readdirSync(htmlDir).forEach(h => {
+  addMeta(path.join(htmlDir, h), h.split('.')[0])
+})
+
