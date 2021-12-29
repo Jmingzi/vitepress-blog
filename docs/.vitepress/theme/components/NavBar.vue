@@ -39,6 +39,17 @@ defineEmits(['toggle'])
   background-color: transparent;
 }
 
+@media screen and (max-width: 719px) {
+  .nav-bar {
+    justify-content: center;
+    background-color: #fff;
+    border-bottom: 1px #eee solid;
+    .flex-grow {
+      display: none;
+    }
+  }
+}
+
 @media (min-width: 720px) {
   .nav-bar {
     padding: 0.7rem 1.5rem;

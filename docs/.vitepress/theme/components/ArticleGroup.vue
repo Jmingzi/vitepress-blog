@@ -27,7 +27,7 @@ const getLink = (item) => {
 <template>
   <section class="article-group">
     <h4 class="article-group__title">{{ item.text }}</h4>
-    <ul>
+    <ul style="padding-left: 0">
       <li
         v-for="child in item.children"
         class="article-group__item">

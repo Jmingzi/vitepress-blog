@@ -62,6 +62,22 @@ const tagline = computed(
   z-index: 2;
 }
 
+@media screen and (max-width: 719px) {
+  .home-hero {
+    top: 0;
+    z-index: 12;
+    img {
+      width: 50px;
+    }
+    p {
+      display: none;
+    }
+  }
+  .figure {
+    padding: 0;
+  }
+}
+
 //@media (min-width: 420px) {
 //  .home-hero {
 //    margin: 3.5rem 0;

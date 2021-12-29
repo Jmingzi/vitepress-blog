@@ -17,8 +17,10 @@
 
   --c-text-tip: #999999;
 
-  --c-brand: #3eaf7c;
-  --c-brand-light: #4abf8a;
+  /*--c-brand: #3eaf7c;*/
+  --c-brand: #3b8ff6;
+  /*--c-brand-light: #4abf8a;*/
+  --c-brand-light: #3b8ff6;
 
   /**
    * Typography

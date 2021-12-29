@@ -34,6 +34,13 @@ const { site, theme, localePath } = useData()
   text-decoration: none;
 }
 
+@media screen and (max-width: 719px) {
+  .nav-bar-title {
+    background-color: transparent;
+    color: #000000;
+  }
+}
+
 .logo {
   margin-right: 0.75rem;
   height: 1.3rem;

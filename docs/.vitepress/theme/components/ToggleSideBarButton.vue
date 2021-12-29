@@ -40,7 +40,7 @@ export default {
 
 @media screen and (max-width: 719px) {
   .sidebar-button {
-    display: block;
+    display: none;
   }
 }
 </style>
