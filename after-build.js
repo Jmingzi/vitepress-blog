@@ -22,7 +22,6 @@ const addMeta = (file, id) => {
       .replace('</title>', item ? `</title>
     <meta name="keywords" content="${item.tag.split('、').join('，')}" />` : '</title>')
       .replace('jmingzi的个人博客', (item ? (item.tag.split('、').join('，') + '，') : '') + 'jmingzi的个人博客')
-      .replace('en-US', 'zh-cn')
   )
 }
 
