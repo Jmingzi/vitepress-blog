@@ -33,6 +33,7 @@ function getDetail (id) {
 
 function getDocConfig () {
   return new Promise((resolve, reject) => {
+    // urllib.request('http://localhost:3000/sync-doc-config.json', {
     urllib.request('https://iming.work/demo/vitepress-blog/dist/sync-doc-config.json', {
       method: 'GET',
       dataType: 'json'
@@ -68,7 +69,9 @@ async function genDirsAndMd (result) {
         console.log(`生成[${item.text}]...`)
         // const pinyin = getPinYin(item.text)
         const { input } = (await getDetail(item.id)).toJSON()
-        fs.outputFileSync(path.join(docPath, '../', `${item.link}.md`), `# ${item.text}\n\n${input}`)
+        const targetFile = path.join(docPath, '../', `${item.link}.md`)
+        fs.outputFileSync(targetFile, `# ${item.text}\n\n${input}`)
+        fs.utimesSync(targetFile, new Date(item.createdAt), new Date(item.createdAt))
         diffConfig[item.id] = Date.now()
       }
     }

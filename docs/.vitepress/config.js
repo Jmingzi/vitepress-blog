@@ -13,7 +13,7 @@ export default {
     logo: '/logo.png',
     editLinkText: 'Edit this page on Git',
     editLinks: false,
-    // lastUpdated: 'Last Updated',
+    lastUpdated: '上次更新',
 
     // navbar: false,
     nav: [
