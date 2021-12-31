@@ -1,6 +1,6 @@
 {
   "name": "vitepress-blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && node after-build.js",
