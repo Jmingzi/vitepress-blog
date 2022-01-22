@@ -6,14 +6,16 @@ import HomeHero from './HomeHero.vue'
 
 onMounted(() => {
   if (window.Gitalk) {
+    const id = location.pathname.split('/').pop().replace('.html', '')
+    console.log('page id ', id)
     const gitalk = new window.Gitalk({
       clientID: 'd26d2255f05e766e9785',
       clientSecret: 'e5628eee6c3ea1fcbc2735d52ffa05db544383ce',
       repo: 'blog-image',
       owner: 'jmingzi',
       admin: ['jmingzi'],
-      number: 1,
-      id: location.pathname.split('/').pop(),      // Ensure uniqueness and length less than 50
+      // number: 1,
+      id,      // Ensure uniqueness and length less than 50
       distractionFreeMode: false  // Facebook-like distraction free mode
     })
     gitalk.render('gitalk-container')
