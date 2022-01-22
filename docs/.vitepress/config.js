@@ -15,6 +15,7 @@ export default {
     editLinks: false,
     lastUpdated: '上次更新',
 
+    // footer: '',
     // navbar: false,
     nav: [
       // { text: '新人入职', link: '/sync-doc/xin_ren_ru_zhi/tuan_dui_jie_shao' },

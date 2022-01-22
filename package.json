@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "escape-html": "^1.0.3",
+    "gitalk": "^1.7.2",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.4.1",
     "markdown-it-toc-done-right": "^4.2.0",

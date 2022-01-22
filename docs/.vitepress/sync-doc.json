@@ -3,11 +3,11 @@
     "text": "2021年",
     "children": [
       {
-        "text": "用 js 读写 binary data (二)",
+        "text": "用 Js 读写 binary data (二)",
         "id": "61cbfb7e316b076c47ddee0a",
         "tag": "binary、ArrayBuffer、DataView、TypedArray",
         "createdAt": "2021-12-29T06:09:02.995Z",
-        "updatedAt": "2021-12-29T06:09:02.995Z",
+        "updatedAt": "2021-12-29T16:34:35.985Z",
         "link": "/detail/61cbfb7e316b076c47ddee0a"
       },
       {

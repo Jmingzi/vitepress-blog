@@ -1,7 +1,25 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import PageFooter from './PageFooter.vue'
 import NextAndPrevLinks from './NextAndPrevLinks.vue'
 import HomeHero from './HomeHero.vue'
+
+import Gitalk from 'gitalk'
+
+const gitalk = new Gitalk({
+  clientID: 'd26d2255f05e766e9785',
+  clientSecret: 'e5628eee6c3ea1fcbc2735d52ffa05db544383ce',
+  repo: 'blog-image',
+  owner: 'jmingzi',
+  admin: ['jmingzi'],
+  number: 1,
+  id: location.pathname.split('/').pop(),      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+onMounted(() => {
+  gitalk.render('gitalk-container')
+})
 </script>
 
 <template>
@@ -15,6 +33,9 @@ import HomeHero from './HomeHero.vue'
       <NextAndPrevLinks />
 
       <slot name="bottom" />
+      <div style="padding-top: 50px">
+        <div id="gitalk-container"></div>
+      </div>
     </div>
   </main>
 </template>
