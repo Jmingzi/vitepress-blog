@@ -18,6 +18,8 @@ const addMeta = (file, id) => {
         display: none!important;
       }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
   </head>`)
       .replace('</title>', item ? `</title>
     <meta name="keywords" content="${item.tag.split('、').join('，')}" />` : '</title>')
