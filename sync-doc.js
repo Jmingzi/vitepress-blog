@@ -66,7 +66,7 @@ async function genDirsAndMd (result) {
       jsonItem.children.push(item)
       item.link = `/${path.join('detail', item.id)}`
       if (needUpdate) {
-        console.log(`生成[${item.text}]...`)
+        console.log(`生成[${item.text}] ${item.createdAt}...`)
         // const pinyin = getPinYin(item.text)
         const { input } = (await getDetail(item.id)).toJSON()
         const targetFile = path.join(docPath, '../', `${item.link}.md`)
