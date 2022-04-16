@@ -32,15 +32,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
+      - run: npm install -g yarn
 
       # Runs a single command using the runners shell
       - name: install
         run: |
-          #rm -f package-lock.json
-          #npm cache clear --force
-          #npm install
-          npm --version
-          npm install yarn
           yarn --version
           yarn install
 
