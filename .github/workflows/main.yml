@@ -36,6 +36,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: install
         run: |
+          rm -f package-lock.json
           npm cache clear --force
           npm install
 
