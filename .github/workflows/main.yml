@@ -40,6 +40,9 @@ jobs:
           #npm cache clear --force
           #npm install
           npm --version
+          npm install yarn
+          yarn --version
+          yarn install
 
       # Runs a set of commands using the runners shell
       - name: Run build
