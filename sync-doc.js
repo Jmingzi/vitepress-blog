@@ -71,7 +71,6 @@ async function genDirsAndMd (result) {
         const { input } = (await getDetail(item.id)).toJSON()
         const targetFile = path.join(docPath, '../', `${item.link}.md`)
         fs.outputFileSync(targetFile, `# ${item.text}\n\n${input}`)
-        fs.utimesSync(targetFile, new Date(item.createdAt), new Date(item.createdAt))
         diffConfig[item.id] = Date.now()
       }
     }
@@ -115,6 +114,15 @@ async function run () {
   const diffConfig = await genDirsAndMd(result)
   await fs.outputFile(configPath, JSON.stringify(json, null, 2))
   await fs.outputFile(diffConfigPath, JSON.stringify(diffConfig, null, 2))
+  /**
+   * 重写文件时间
+   * 如果文件未修改，通过 github action 自动拉取后的文件时间非文章编辑时间
+   * 需要再次修改
+   */
+  json.reduce((arr, cur) => arr.concat(cur.children), []).forEach(item => {
+    const targetFile = path.join(docPath, '../', `${item.link}.md`)
+    fs.utimesSync(targetFile, new Date(item.createdAt), new Date(item.updatedAt))
+  })
   console.log('写入配置完成')
 }
 
