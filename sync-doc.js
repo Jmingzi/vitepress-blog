@@ -121,7 +121,9 @@ async function run () {
    */
   json.reduce((arr, cur) => arr.concat(cur.children), []).forEach(item => {
     const targetFile = path.join(docPath, '../', `${item.link}.md`)
-    fs.utimesSync(targetFile, new Date(item.createdAt), new Date(item.updatedAt))
+    if (fs.pathExistsSync(targetFile)) {
+      fs.utimesSync(targetFile, new Date(item.createdAt), new Date(item.updatedAt))
+    }
   })
   console.log('写入配置完成')
 }
