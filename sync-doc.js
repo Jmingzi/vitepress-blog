@@ -62,7 +62,12 @@ async function genDirsAndMd (result) {
 
     const value = result[year]
     for (const item of value) {
-      const needUpdate = !diffConfig[item.id] || (new Date(item.updatedAt).getTime() > diffConfig[item.id])
+      // const needUpdate = !diffConfig[item.id] || (new Date(item.updatedAt).getTime() > diffConfig[item.id])
+      /**
+       * 不更新首页的链接不会生成，无法点击
+       * @type {boolean}
+       */
+      const needUpdate = true
       jsonItem.children.push(item)
       item.link = `/${path.join('detail', item.id)}`
       if (needUpdate) {
