@@ -10,14 +10,17 @@ const addMeta = (file, id) => {
     file,
     fs.readFileSync(file, 'utf8')
       .replace('</body>', `
-    <script src="https://s19.cnzz.com/z_stat.php?id=1274714892&web_id=1274714892"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6d281b558aa5550c06d5ab68b17b734f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
   </body>`)
       .replace('</head>', `  <meta name="google-site-verification" content="TbvyCK9sEBOqr5fAbXQ2uLNMgTDgn4wmpBM747LhOwk" />
-    <style>
-      a[title="站长统计"] {
-        display: none!important;
-      }
-    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
   </head>`)
