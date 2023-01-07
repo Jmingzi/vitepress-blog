@@ -27,8 +27,10 @@ const gittalk = () => {
       id,      // Ensure uniqueness and length less than 50
       distractionFreeMode: false  // Facebook-like distraction free mode
     })
-    gitalk.render('gitalk-container')
-    console.log('[gitalk]: render success', gitalk)
+    setTimeout(() => {
+      gitalk.render('gitalk-container')
+      console.log('[gitalk]: render success', gitalk)
+    }, 200)
   }
 }
 const setPv = (num) => {
