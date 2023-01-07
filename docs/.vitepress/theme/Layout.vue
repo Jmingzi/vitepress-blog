@@ -13,8 +13,9 @@ import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import { onMounted } from 'vue'
 
 const rawHistoryPushState = globalThis?.history?.pushState
+const getPageId = () => location.pathname.split('/').pop().replace('.html', '')
 const gittalk = () => {
-  const id = location.pathname.split('/').pop().replace('.html', '')
+  const id = getPageId()
   console.log('[gitalk]: page id ', id)
   if (window.Gitalk && id) {
     const gitalk = new window.Gitalk({
@@ -49,6 +50,11 @@ const setPv = (num) => {
   editInfo.appendChild(read)
 }
 const loadPv = () => {
+  const id = getPageId()
+  if (!id) {
+    return
+  }
+
   const callbackName = `cb_${Math.floor(Math.random() * 10000)}`
   window[callbackName] = ({ pv }) => {
     setPv(pv)
@@ -61,6 +67,7 @@ const loadPv = () => {
   s.id = 'count'
   s.onload = () => {
     delete window[callbackName]
+    s.remove()
   }
   const el = document.getElementById('count')
   if (el) {
