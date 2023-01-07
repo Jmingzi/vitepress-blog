@@ -16,7 +16,7 @@ const rawHistoryPushState = globalThis?.history?.pushState
 const gittalk = () => {
   const id = location.pathname.split('/').pop().replace('.html', '')
   console.log('[gitalk]: page id ', id)
-  if (window.Gitalk) {
+  if (window.Gitalk && id) {
     const gitalk = new window.Gitalk({
       clientID: 'd26d2255f05e766e9785',
       clientSecret: 'e5628eee6c3ea1fcbc2735d52ffa05db544383ce',

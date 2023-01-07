@@ -15,7 +15,14 @@ export default {
       { icon: 'github', link: 'https://github.com/jmingzi' }
     ],
     lastUpdatedText: '上次更新',
-    sidebar: syncDoc,
+    algolia: {
+      appId: '7H67QR5P0A',
+      apiKey: 'deaab78bcdfe96b599497d25acc6460e',
+      indexName: 'vitejs',
+      searchParameters: {
+        facetFilters: ['tags:en'],
+      },
+    }, sidebar: syncDoc,
     // editLink: {
     //   pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
     //   text: 'Edit this page on GitHub'
