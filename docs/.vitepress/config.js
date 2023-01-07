@@ -16,9 +16,9 @@ export default {
     ],
     lastUpdatedText: '上次更新',
     algolia: {
-      appId: '7H67QR5P0A',
-      apiKey: 'deaab78bcdfe96b599497d25acc6460e',
-      indexName: 'vitejs',
+      appId: 'QY2UJ6SVZF',
+      apiKey: 'd87733071ba6a4be70246956285214a3',
+      indexName: 'ym',
       searchParameters: {
         facetFilters: ['tags:en'],
       },

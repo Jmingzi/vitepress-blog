@@ -3,6 +3,7 @@ const path = require('path')
 const html = path.resolve(__dirname, 'docs/.vitepress/dist/index.html')
 const htmlDir = path.resolve(__dirname, 'docs/.vitepress/dist/detail')
 const json = require('./docs/.vitepress/sync-doc.json')
+const algoliasearch = require('algoliasearch')
 
 const addMeta = (file, id) => {
   const item = id ? find(id) : null
@@ -45,3 +46,6 @@ fs.readdirSync(htmlDir).forEach(h => {
   addMeta(path.join(htmlDir, h), h.split('.')[0])
 })
 
+// const client = algoliasearch('QY2UJ6SVZF', 'YourWriteAPIKey')
+// const index = client.initIndex('ym')
+// index.saveObjects([], { autoGenerateObjectIDIfNotExist: true })
