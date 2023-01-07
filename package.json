@@ -1,0 +1,22 @@
+{
+  "name": "vitepress-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs && node after-build.js",
+    "preview": "vitepress preview docs",
+    "prepare": "node ./sync-doc.js"
+  },
+  "keywords": [],
+  "author": "yangming",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "leancloud-storage": "^4.14.0",
+    "urllib": "^3.10.0",
+    "vitepress": "1.0.0-alpha.35",
+    "vue": "^3.2.45"
+  }
+}
