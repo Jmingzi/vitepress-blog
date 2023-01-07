@@ -46,6 +46,27 @@ fs.readdirSync(htmlDir).forEach(h => {
   addMeta(path.join(htmlDir, h), h.split('.')[0])
 })
 
-// const client = algoliasearch('QY2UJ6SVZF', 'YourWriteAPIKey')
-// const index = client.initIndex('ym')
-// index.saveObjects([], { autoGenerateObjectIDIfNotExist: true })
+const client = algoliasearch('QY2UJ6SVZF', '609c32c9f2941511183e724657af9ee6')
+const index = client.initIndex('ym')
+
+const algoliaResult = []
+;(async () => {
+  for (const it of json) {
+    for (const child of it.items) {
+      // 读取文档内容
+      const content = await fs.readFile(path.resolve(__dirname, 'docs/detail', `${child.id}.md`), 'utf8')
+      algoliaResult.push({
+        type: 'lvl1',
+        url: `https://iming.work/detail/${child.id}.html`,
+        content: content,
+        hierarchy: {
+          lvl0: it.text,
+          lvl1: child.text
+        },
+      })
+    }
+  }
+  console.log('algolia 更新数据', algoliaResult.length, '条')
+  await index.clearObjects()
+  await index.saveObjects(algoliaResult, { autoGenerateObjectIDIfNotExist: true })
+})()

@@ -37,10 +37,15 @@ const setPv = (num) => {
   const editInfo = document.querySelector('.edit-info')
   const vPLastUpdated = editInfo.querySelector('.VPLastUpdated')
   const scopedId = vPLastUpdated.attributes[1].name
+
+  const xxx = editInfo.querySelector('.xxx')
+  xxx?.remove()
+
   const read = document.createElement('p')
   read.classList.add('VPLastUpdated')
+  read.classList.add('xxx')
   read.setAttribute(scopedId, '')
-  read.innerText = `阅读数：${num}`
+  read.innerText = `已被阅读 ${num} 次`
   editInfo.appendChild(read)
 }
 const loadPv = () => {
@@ -67,15 +72,15 @@ const loadPv = () => {
 onMounted(() => {
   if (globalThis?.history?.pushState) {
     gittalk()
+    loadPv()
     if (!globalThis.history.pushState._flag) {
       globalThis.history.pushState._flag = true
       globalThis.history.pushState = function (data, title, url) {
         rawHistoryPushState.call(globalThis.history, data, title, url)
         gittalk()
+        loadPv()
       }
     }
-
-    loadPv()
   }
 })
 </script>

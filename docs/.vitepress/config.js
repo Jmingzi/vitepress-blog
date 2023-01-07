@@ -18,11 +18,12 @@ export default {
     algolia: {
       appId: 'QY2UJ6SVZF',
       apiKey: 'd87733071ba6a4be70246956285214a3',
-      indexName: 'ym',
-      searchParameters: {
-        facetFilters: ['tags:en'],
-      },
-    }, sidebar: syncDoc,
+      indexName: 'ym'
+      // searchParameters: {
+      //   facetFilters: ['tags:en'],
+      // },
+    },
+    sidebar: syncDoc,
     // editLink: {
     //   pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
     //   text: 'Edit this page on GitHub'

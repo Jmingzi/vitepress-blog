@@ -13,6 +13,7 @@
   "author": "yangming",
   "license": "ISC",
   "dependencies": {
+    "algoliasearch": "^4.14.3",
     "fs-extra": "^11.1.0",
     "leancloud-storage": "^4.14.0",
     "urllib": "^3.10.0",
