@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs && node after-build.js",
+    "docs:build": "vitepress build docs && node after-build.js",
     "preview": "vitepress preview docs",
     "prepare": "node ./sync-doc.js"
   },
