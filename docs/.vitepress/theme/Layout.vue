@@ -31,6 +31,36 @@ const gittalk = () => {
     console.log('[gitalk]: render success', gitalk)
   }
 }
+const setPv = (num) => {
+  const editInfo = document.querySelector('.edit-info')
+  const vPLastUpdated = editInfo.querySelector('.VPLastUpdated')
+  const scopedId = vPLastUpdated.attributes[1].name
+  const read = document.createElement('p')
+  read.classList.add('VPLastUpdated')
+  read.setAttribute(scopedId, '')
+  read.innerText = `阅读数：${num}`
+  editInfo.appendChild(read)
+}
+const loadPv = () => {
+  const callbackName = `cb_${Math.floor(Math.random() * 10000)}`
+  window[callbackName] = ({ pv }) => {
+    setPv(pv)
+  }
+  const s = document.createElement('script')
+  s.src = `https://iming.work/api/blog/count?callback=${callbackName}`
+  // s.src = `http://127.0.0.1:3000/api/blog/count?callback=${callbackName}`
+  s.referrerPolicy = 'no-referrer-when-downgrade'
+  s.defer = !0
+  s.id = 'count'
+  s.onload = () => {
+    delete window[callbackName]
+  }
+  const el = document.getElementById('count')
+  if (el) {
+    el.remove()
+  }
+  document.head.appendChild(s)
+}
 
 onMounted(() => {
   if (globalThis?.history?.pushState) {
@@ -42,6 +72,8 @@ onMounted(() => {
         gittalk()
       }
     }
+
+    loadPv()
   }
 })
 </script>

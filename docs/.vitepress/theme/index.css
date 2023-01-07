@@ -11,7 +11,7 @@
 .lead-text {
     font-size: 16px;
 }
-code {
+.lead-code code {
     padding: 0.2em 0.4em;
     font-size: 85%;
     white-space: break-spaces;
@@ -19,6 +19,6 @@ code {
     border-radius: 6px;
     margin: 0 5px;
 }
-code img {
+.lead-code code img {
     height: 20px;
 }
