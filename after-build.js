@@ -32,7 +32,7 @@ const addMeta = (file, id) => {
 
 const find = (id) => {
   for (const it of json) {
-    for (const child of it.children) {
+    for (const child of it.items) {
       if (child.id === id) {
         return child
       }

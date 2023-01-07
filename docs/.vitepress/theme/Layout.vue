@@ -12,7 +12,7 @@
 import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import { onMounted } from 'vue'
 
-const rawHistoryPushState = history.pushState
+const rawHistoryPushState = globalThis?.history?.pushState
 const gittalk = () => {
   const id = location.pathname.split('/').pop().replace('.html', '')
   console.log('[gitalk]: page id ', id)
@@ -33,12 +33,14 @@ const gittalk = () => {
 }
 
 onMounted(() => {
-  gittalk()
-  if (!history.pushState._flag) {
-    history.pushState._flag = true
-    history.pushState = function (data, title, url) {
-      rawHistoryPushState.call(history, data, title, url)
-      gittalk()
+  if (globalThis?.history?.pushState) {
+    gittalk()
+    if (!globalThis.history.pushState._flag) {
+      globalThis.history.pushState._flag = true
+      globalThis.history.pushState = function (data, title, url) {
+        rawHistoryPushState.call(globalThis.history, data, title, url)
+        gittalk()
+      }
     }
   }
 })
