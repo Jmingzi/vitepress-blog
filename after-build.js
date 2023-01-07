@@ -46,11 +46,17 @@ fs.readdirSync(htmlDir).forEach(h => {
   addMeta(path.join(htmlDir, h), h.split('.')[0])
 })
 
-const client = algoliasearch('QY2UJ6SVZF', '609c32c9f2941511183e724657af9ee6')
-const index = client.initIndex('ym')
-
 const algoliaResult = []
 ;(async () => {
+  const algoliaToken = process.env.ALGOLIA
+  if (!algoliaToken) {
+    console.log('algolia admin key is empty!')
+    return
+  }
+
+  const client = algoliasearch('QY2UJ6SVZF', algoliaToken)
+  const index = client.initIndex('ym')
+
   for (const it of json) {
     for (const child of it.items) {
       // 读取文档内容
