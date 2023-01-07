@@ -36,8 +36,15 @@ const gittalk = () => {
 }
 const setPv = (num) => {
   const editInfo = document.querySelector('.edit-info')
+  if (!editInfo) {
+    return
+  }
+  const scopedId1 = editInfo.attributes[1].name
   const vPLastUpdated = editInfo.querySelector('.VPLastUpdated')
-  const scopedId = vPLastUpdated.attributes[1].name
+  let scopedId = vPLastUpdated.attributes[1].name
+  if (scopedId === scopedId1) {
+    scopedId = vPLastUpdated.attributes[2].name
+  }
 
   const xxx = editInfo.querySelector('.xxx')
   xxx?.remove()
@@ -61,7 +68,6 @@ const loadPv = () => {
   }
   const s = document.createElement('script')
   s.src = `https://iming.work/api/blog/count?callback=${callbackName}`
-  // s.src = `http://127.0.0.1:3000/api/blog/count?callback=${callbackName}`
   s.referrerPolicy = 'no-referrer-when-downgrade'
   s.defer = !0
   s.id = 'count'
