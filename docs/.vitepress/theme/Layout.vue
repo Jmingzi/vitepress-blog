@@ -14,6 +14,8 @@ import { onMounted } from 'vue'
 
 const rawHistoryPushState = globalThis?.history?.pushState
 const getPageId = () => location.pathname.split('/').pop().replace('.html', '')
+let gittalkTimer
+
 const gittalk = () => {
   const id = getPageId()
   console.log('[gitalk]: page id ', id)
@@ -28,10 +30,23 @@ const gittalk = () => {
       id,      // Ensure uniqueness and length less than 50
       distractionFreeMode: false  // Facebook-like distraction free mode
     })
-    setTimeout(() => {
-      gitalk.render('gitalk-container')
-      console.log('[gitalk]: render success', gitalk)
-    }, 200)
+    function render (domId) {
+      if (gittalkTimer) {
+        clearTimeout(gittalkTimer)
+        gittalkTimer = null
+      }
+      gittalkTimer = setTimeout(() => {
+        const container = document.getElementById(domId)
+        if (container) {
+          Array.from(container.childNodes).forEach(el => el.remove())
+          gitalk.render(domId)
+          console.log('[gitalk]: render success')
+        } else {
+          render(domId)
+        }
+      }, 200)
+    }
+    render('gitalk-container')
   }
 }
 const setPv = (num) => {
