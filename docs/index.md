@@ -13,7 +13,7 @@ const members = [
   {
     avatar: '/logo.png',
     name: 'Jmingzi',
-    title: 'Working in Hangzhou',
+    title: '工作在杭州',
     links: [
       { icon: 'github', link: 'https://github.com/jmingzi' },
       { icon: 'twitter', link: 'https://twitter.com/jmingzi' }
@@ -29,7 +29,7 @@ const members = [
     </template>
     <template #lead>
       <div class="lead-text"> 
-        A front-end architect, often use Vue, React, NodeJs to realize my idea.
+        从事前端行业，使用 React、Vue、Typescript、Nodejs 实现生活中的小灵感
       </div>
       <div class="lead-code">  
         <code><img alt="javascript" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
