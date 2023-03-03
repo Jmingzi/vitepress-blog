@@ -8,7 +8,7 @@ export default {
   description: 'jmingzi的个人博客，前端基础教程、前端框架学习、前端代码分享、前端技术指导、分享在工作中总结的实战开发经验',
   base: '/',
   themeConfig: {
-    siteTitle: 'Yang Ming',
+    siteTitle: 'Jmingzi',
     nav: [
       // {
       //   text: 'Github',

@@ -2,3 +2,8 @@
     --vp-c-brand: #646cff;
     --vp-c-brand-light: #747bff;
 }
+
+.VPNav .container .title {
+    font-family: monospace;
+    font-size: 18px;
+}
