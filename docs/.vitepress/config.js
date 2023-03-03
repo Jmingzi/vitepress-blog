@@ -10,6 +10,14 @@ export default {
   themeConfig: {
     siteTitle: 'Yang Ming',
     nav: [
+      // {
+      //   text: 'Github',
+      //   link: 'https://github.com/jmingzi'
+      // },
+      {
+        text: 'XProcess',
+        link: 'https://iming.work/xprocess/#/editor'
+      }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/jmingzi' }
