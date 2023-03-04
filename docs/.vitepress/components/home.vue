@@ -12,6 +12,7 @@ import v from './images/vue.png'
 import s from './images/swc.png'
 import p from './images/puppeteer.png'
 import xx from './images/xx.png'
+import vscode from './images/vscode.png'
 
 const works = [
   {
@@ -39,13 +40,13 @@ const skills = [
     title: 'vue',
     icon: v
   },
-  // {
-  //   title: 'swc',
-  //   icon: s
-  // },
   {
     title: 'puppeteer',
     icon: p
+  },
+  {
+    title: 'swc',
+    icon: s
   }
 ]
 
@@ -56,15 +57,15 @@ const onOpen = () => {
 
 <template>
   <VPTeamPage>
-    <VPTeamPageTitle style="text-align: left;">
+    <VPTeamPageTitle style="text-align: left;font-family: var(--vp-font-family-mono)">
       <template #title>
-        <div style="font-family: monospace;font-weight: bold">
+        <div style="font-weight: bold">
           <p>Welcome,</p>
-          <h1 style="font-size: inherit;font-weight: inherit">I`m Jmingzi</h1>
+          <p>I`m Jmingzi</p>
         </div>
 
         <div class="lead-text">
-          从事前端行业，日常使用 {{ skills.map(x => x.title).join('、') }} 实现生活中的小灵感。
+          🤔 Engaged in front-end industry, daily use of {{ skills.map(x => x.title).join('、') }} to realize small inspiration in life.
         </div>
         <div class="lead-code">
           <code v-for="item in skills">
@@ -72,7 +73,7 @@ const onOpen = () => {
           </code>
         </div>
 
-        <p style="font-family: monospace;font-weight: bold">Projects</p>
+        <p style="font-weight: bold">Projects</p>
         <div class="works">
           <div class="work" @click="onOpen">
             <div class="work__img">
@@ -80,7 +81,16 @@ const onOpen = () => {
             </div>
             <div>
               <p class="work__title">XProcess</p>
-              <p class="work__desc">流程图、架构图绘制工具</p>
+              <p class="work__desc">Flow chart and architecture drawing tool</p>
+            </div>
+          </div>
+          <div class="work" @click="onOpen">
+            <div class="work__img">
+              <img :src="vscode" alt="">
+            </div>
+            <div>
+              <p class="work__title">Vscode Blog</p>
+              <p class="work__desc">Using vitepress and vscode extension to develop static blog</p>
             </div>
           </div>
         </div>
@@ -93,8 +103,8 @@ const onOpen = () => {
 
 <style lang="css">
 .lead-text {
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 25px;
   margin-top: 25px;
   word-break: break-all;
 }
@@ -120,7 +130,9 @@ const onOpen = () => {
 }
 
 .works {
-  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 100px;
   margin-top: 20px;
@@ -128,16 +140,34 @@ const onOpen = () => {
 .work {
   display: flex;
   align-items: center;
-  max-width: 400px;
+  width: 45%;
   padding: 15px;
   border-radius: 6px;
   background: var(--vp-c-bg-soft);
   cursor: pointer;
+  margin-bottom: 15px;
 }
+.work:nth-of-type(2n-1) {
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .work:nth-of-type(2n-1) {
+    margin-right: 0;
+  }
+  .works {
+    display: block;
+  }
+  .work {
+    width: 100%;
+  }
+}
+
 .work__desc {
   font-size: 14px;
   color: #999;
   margin-top: 15px;
+  word-break: break-all;
 }
 .work__img {
   width: 50px;

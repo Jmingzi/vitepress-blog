@@ -4,6 +4,6 @@
 }
 
 .VPNav .container .title {
-    font-family: monospace;
+    font-family: var(--vp-font-family-mono);
     font-size: 18px;
 }
