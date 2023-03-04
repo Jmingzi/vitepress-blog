@@ -50,8 +50,8 @@ const skills = [
   }
 ]
 
-const onOpen = () => {
-  window.open('https://iming.work/xprocess')
+const onOpen = (url) => {
+  window.open(url)
 }
 </script>
 
@@ -75,7 +75,7 @@ const onOpen = () => {
 
         <p style="font-weight: bold">Projects</p>
         <div class="works">
-          <div class="work" @click="onOpen">
+          <div class="work" @click="onOpen('https://iming.work/xprocess')">
             <div class="work__img">
               <img :src="xx" alt="">
             </div>
@@ -84,7 +84,7 @@ const onOpen = () => {
               <p class="work__desc">Flow chart and architecture drawing tool</p>
             </div>
           </div>
-          <div class="work" @click="onOpen">
+          <div class="work" @click="onOpen('https://iming.work/detail/61ab85d7e7b84562fe7bda3a.html')">
             <div class="work__img">
               <img :src="vscode" alt="">
             </div>
