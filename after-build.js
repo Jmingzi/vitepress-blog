@@ -22,8 +22,8 @@ const addMeta = (file, id) => {
     </script>
   </body>`)
       .replace('</head>', `  <meta name="google-site-verification" content="TbvyCK9sEBOqr5fAbXQ2uLNMgTDgn4wmpBM747LhOwk" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <link rel="stylesheet" href="/gitalk.css">
+    <script src="/gitalk.min.js"></script>
   </head>`)
       .replace('</title>', item ? `</title>
     <meta name="keywords" content="${item.tag.split('、').join('，')}" />` : '</title>')
