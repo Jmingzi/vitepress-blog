@@ -73,6 +73,10 @@ const algoliaResult = []
     }
   }
   console.log('algolia 更新数据', algoliaResult.length, '条')
-  await index.clearObjects()
-  await index.saveObjects(algoliaResult, { autoGenerateObjectIDIfNotExist: true })
+  try {
+    await index.clearObjects()
+    await index.saveObjects(algoliaResult, { autoGenerateObjectIDIfNotExist: true })
+  } catch (e) {
+    console.log(e.message)
+  }
 })()
