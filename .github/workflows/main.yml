@@ -57,7 +57,7 @@ jobs:
           # Private Key
           SSH_PRIVATE_KEY: ${{ secrets.TOKEN }}
           # Remote host
-          REMOTE_HOST: 1.117.74.21
+          REMOTE_HOST: 49.234.189.8
           # Remote user
           REMOTE_USER: root
           # Remote port
