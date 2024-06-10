@@ -95,7 +95,9 @@ const onOpen = (url) => {
           </div>
         </div>
 
-        <p style="font-size: 14px;color: #999999;">鄂ICP备18011687号-1.</p>
+        <p style="font-size: 14px;color: #999999;">
+          <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备18011687号-1.</a>
+        </p>
       </template>
     </VPTeamPageTitle>
   </VPTeamPage>
