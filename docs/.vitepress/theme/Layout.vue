@@ -99,13 +99,13 @@ const loadPv = () => {
 
 onMounted(() => {
   if (globalThis?.history?.pushState) {
-    // gittalk()
+    gittalk()
     loadPv()
     if (!globalThis.history.pushState._flag) {
       globalThis.history.pushState._flag = true
       globalThis.history.pushState = function (data, title, url) {
         rawHistoryPushState.call(globalThis.history, data, title, url)
-        // gittalk()
+        gittalk()
         loadPv()
       }
     }
